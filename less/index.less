@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Girassol&display=swap');
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -55,5 +57,65 @@ table {
 
 html, body {
     height: 100%;
+	font-size:62.5%;
 }
 
+@hfont: 'Girassol', cursive;
+@hfontcolor:teal;
+@bfont: 'Dancing Script', cursive;
+@bfontcolor:indianred;
+
+
+.nav(){
+	//width:60%;
+	display:flex;
+	justify-content:space-evenly;
+	align-items:center;
+}
+.links(){
+	font-family:@bfont;
+	color:palevioletred;
+	font-size:3rem;
+	text-decoration:none;
+	display:flex;
+	justify-content:space-around;
+	
+}
+
+.hover(){
+	color:midnightblue;
+	text-decoration:dotted;
+}
+
+h1{
+	font:bold;
+	font-family:@hfont;
+	font-size:10rem;
+	text-align:center;
+	color:@hfontcolor;
+}
+
+h2{
+	font-family:@hfont;
+	font-size:6rem;
+	color:@hfontcolor;
+	text-align:center;
+}
+
+p{
+	font-family:@bfont;
+	color:@bfontcolor;
+	text-align:center;
+	font-size:4rem;
+}
+
+nav{
+	.nav();
+
+	a{
+		.links();
+		&:hover{
+			.hover();
+		}
+	}
+}

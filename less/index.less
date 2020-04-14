@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Girassol&display=swap');
+
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -55,5 +57,84 @@ table {
 
 html, body {
     height: 100%;
+	font-size:62.5%;
+	padding:2%;
+	background-color:mistyrose;
 }
 
+@hfont: 'Girassol', cursive;
+@hfontcolor:teal;
+@bfont: 'Dancing Script', cursive;
+@bfontcolor:indianred;
+@padding:1% 0% 1% 0%;
+
+.nav(){
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-evenly;
+	align-items:center;
+	padding:@padding;
+}
+.links(){
+	font-family:@bfont;
+	color:palevioletred;
+	font-size:3rem;
+	text-decoration:none;
+	padding:@padding
+}
+
+.hover(){
+	color:midnightblue;
+	text-decoration:dotted;
+}
+
+h1{
+	font:bold;
+	font-family:@hfont;
+	font-size:10rem;
+	text-align:center;
+	color:@hfontcolor;
+	padding:@padding;
+}
+
+h2{
+	font-family:@hfont;
+	font-size:6rem;
+	color:@hfontcolor;
+	text-align:center;
+	padding:@padding;
+}
+
+h3{
+	font-family:@hfont;
+	font-size:5rem;
+	color:@hfontcolor;
+	text-align:center;
+	padding:@padding;
+}
+
+p{
+	padding:2% 10% 2% 10%;
+	font-family:@bfont;
+	color:@bfontcolor;
+	text-align:center;
+	font-size:4rem;
+}
+
+nav{
+	.nav();
+	@media(max-width:500px){
+		width:100%;
+		flex-wrap:wrap;
+		flex-direction:column;
+		align-content:space-around;
+		padding:1%;
+		}
+	a{
+		.links();
+		&:hover{
+			.hover();
+		}
+		
+	}
+}

@@ -58,28 +58,29 @@ table {
 html, body {
     height: 100%;
 	font-size:62.5%;
+	padding:2%;
+	background-color:mistyrose;
 }
 
 @hfont: 'Girassol', cursive;
 @hfontcolor:teal;
 @bfont: 'Dancing Script', cursive;
 @bfontcolor:indianred;
-
+@padding:1% 0% 1% 0%;
 
 .nav(){
-	//width:60%;
 	display:flex;
+	flex-wrap:wrap;
 	justify-content:space-evenly;
 	align-items:center;
+	padding:@padding;
 }
 .links(){
 	font-family:@bfont;
 	color:palevioletred;
 	font-size:3rem;
 	text-decoration:none;
-	display:flex;
-	justify-content:space-around;
-	
+	padding:@padding
 }
 
 .hover(){
@@ -93,6 +94,7 @@ h1{
 	font-size:10rem;
 	text-align:center;
 	color:@hfontcolor;
+	padding:@padding;
 }
 
 h2{
@@ -100,9 +102,19 @@ h2{
 	font-size:6rem;
 	color:@hfontcolor;
 	text-align:center;
+	padding:@padding;
+}
+
+h3{
+	font-family:@hfont;
+	font-size:5rem;
+	color:@hfontcolor;
+	text-align:center;
+	padding:@padding;
 }
 
 p{
+	padding:2% 10% 2% 10%;
 	font-family:@bfont;
 	color:@bfontcolor;
 	text-align:center;
@@ -111,11 +123,18 @@ p{
 
 nav{
 	.nav();
-
+	@media(max-width:500px){
+		width:100%;
+		flex-wrap:wrap;
+		flex-direction:column;
+		align-content:space-around;
+		padding:1%;
+		}
 	a{
 		.links();
 		&:hover{
 			.hover();
 		}
+		
 	}
 }
